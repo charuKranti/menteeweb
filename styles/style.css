@@ -158,17 +158,12 @@ p {
 }
 
 header {
-    height: 100px;
+    height: 80px;
     background-color: #fea24d;
     display: flex;
     align-items: center;
     padding-left: 15px;
     padding-right: 15px;
-}
-
-header .logo .hello {
-    color: #242424;
-    margin-right: 5px;
 }
 header .logo {
     font-size: 68px;
@@ -177,7 +172,13 @@ header .logo {
     color: #fff;
     padding-right: 15px;
     position: relative;
+    line-height: 70px;
 }
+header .logo .hello {
+    color: #242424;
+    margin-right: 5px;
+}
+
 header .logo span {
     display: inline-block;
 }
@@ -205,6 +206,7 @@ header .btn {
     }
     header .logo {
         font-size: 44px;
+        line-height: 50px;
     }
 }
 .logo-circle figure {

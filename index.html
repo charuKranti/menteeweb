@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- below tag is often placed at the beginning to specify the character encoding for the document -->
+    <meta charset="UTF-8">
+    <!-- below tag is commonly used to ensure proper scaling on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- below title tag comes after meta tags and is displayed on the browser's title bar or is important for search engine optimization (SEO). -->
+    <title>Frontend</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+
+  <body>
+    <header>
+        <div class="logo animate__animated animate__slideLeft">
+          <div class="text-shadow">
+            <span class="hello animate__animated animate__slower animate__slideInDown">Mentee</span>
+            <span class="animate__animated animate__slower animate__slideInUp">WEB</span>
+          </div>
+          <!-- <div class="slogan animate__animated animate__slower animate__slideInUp">Easy Learn Easy Code</div> -->
+        </div>
+        <!-- <div class="logo-circle">
+          <figure></figure>
+          <div class="logo-circle__letters">
+            <div class="text-shadow">M<span>W</span></div>
+            <div class="logo-circle__slogan">Easy Learn Easy Code</div>
+          </div>
+        </div> -->
+        <button class="btn"><img src="./images/Hamburger.svg" /></button>
+    </header>
+
+    <section class="banner texture texture-bottom">
+      <figure>
+        <img class="animate__animated animate__shakeX" src="./images/banner.png" alt="" />
+      </figure>
+      <h1 class="page-title text-white animate__animated animate__zoomInDown"><span class="text-orange">Easy</span> Learning <br /> Easy <span class="text-orange">Coding</span></h1>
+    </section>
+    <section class="circles-container">
+      <ul class="card-container">
+        <li class="card scroll-animate animate__animated" data-animate="animate__slideInLeft">
+          <div class="card__title">HTML</div>
+          <a class="card__link">
+            <figure class="card__img">
+              <img src="./images/html5.svg" alt=""  />
+            </figure>
+          </a>
+        </li>
+        <li class="card scroll-animate animate__animated" data-animate="animate__slideInDown">
+          <div class="card__title">CSS</div>
+          <a class="card__link">
+            <figure class="card__img">
+              <img src="./images/CSS3.png" alt=""  />
+            </figure>
+          </a>
+        </li>
+        <li class="card scroll-animate animate__animated" data-animate="animate__slideInDown">
+          <div class="card__title">JavaScript</div>
+          <a class="card__link">
+            <figure class="card__img">
+              <img src="./images/js.png" alt=""  />
+            </figure>
+          </a>
+        </li>
+        <li class="card scroll-animate animate__animated" data-animate="animate__slideInRight">
+          <div class="card__title">Knockout</div>
+          <a class="card__link">
+            <figure class="card__img knockout">
+              K
+            </figure>
+          </a>
+        </li>
+        <li class="card scroll-animate animate__animated" data-animate="animate__slideInRight">
+          <div class="card__title">Angular</div>
+          <a class="card__link">
+            <figure class="card__img">
+              <img src="./images/angular.png" alt=""  />
+            </figure>
+          </a>
+        </li>
+        <li class="card scroll-animate animate__animated" data-animate="animate__slideInLeft">
+          <div class="card__title">React</div>
+          <a class="card__link">
+            <figure class="card__img">
+              <img src="./images/React.svg" alt=""  />
+            </figure>
+          </a>
+        </li>
+        <li class="card scroll-animate animate__animated" data-animate="animate__slideInLeft">
+          <div class="card__title">Node</div>
+          <a class="card__link">
+            <figure class="card__img">
+              <img src="./images/node.png" alt=""  />
+            </figure>
+          </a>
+        </li>
+        <li class="card scroll-animate animate__animated" data-animate="animate__slideInLeft">
+          <div class="card__title">jQuery</div>
+          <a class="card__link">
+            <figure class="card__img">
+              <img src="./images/jquery.png" alt=""  />
+            </figure>
+          </a>
+        </li>
+      </ul>
+      <div class="circles">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </section>
+
+    <script>
+      // Function to check if an element is in the viewport
+      function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+          rect.top >= 0 &&
+          rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+        );
+      }
+  
+      // Function to add or remove the 'visible' class based on scroll position
+      function handleScroll() {
+        const elements = document.querySelectorAll('.scroll-animate');
+        
+        elements.forEach(element => {
+          if (isInViewport(element)) {
+            element.classList.add(element.getAttribute("data-animate"));
+          } else {
+            // element.classList.remove(element.getAttribute("data-animate"));
+          }
+        });
+      }
+  
+      // Attach the handleScroll function to the scroll event
+      document.addEventListener('scroll', handleScroll);
+  
+      // Initial check in case some elements are already in the viewport
+      handleScroll();
+    </script>
+  </body>
+</html>
